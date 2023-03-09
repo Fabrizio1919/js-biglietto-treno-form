@@ -26,6 +26,17 @@ fasciaAge.addEventListener('click', function() {
     const mySelect = document.getElementById('mySelect').value;
     console.log(`Fascia d'eta ${mySelect}`);
 })
+const btnGenera = document.getElementById("genera")
+btnGenera.addEventListener('click', function() {
+    const genera = document.getElementById('genera').value;
+    console.log(`Genera ${genera}`);
+})
+const btnAnnulla = document.getElementById("annulla")
+btnAnnulla.addEventListener('click', function() {
+    const annulla = document.getElementById('annulla').value;
+    console.log(`RESET ${annulla}`);
+})
+
 
 
 
