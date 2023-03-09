@@ -7,21 +7,27 @@ Età del passeggero Sulla base di queste informazioni dovrà calcolare il prezzo
 - va applicato uno sconto del 40% per gli over 65.
  */
 // Chiedere all'utente Nome e cognome
-function myFunction() {
-    let user = document.getElementById("myForm").name;
-    document.getElementById("demo").innerHTML = "The name of the form is: ";
-    console.log(user)
-}
+const userNameSurname = document.getElementById("myForm")
+userNameSurname.addEventListener('click', function() {
+    const name = document.getElementById('nome').value;
+    //console.log('NOME E COGNOME', name);
+    console.log(`NOME E COGNOME ${name}`);
+})
 // Chiedere all'utente i KM da percorrere
-const km = Number(prompt('Quanti chilometri vuoi percorrere?'));
-function myFunction() {
-    let km = document.getElementById("km").name;
-    document.getElementById("demo").innerHTML = "How many kilometers do I have to travel: " ;
-}
+const userKm = document.getElementById("km")
+userKm.addEventListener('click', function() {
+    const kmPercorsi = document.getElementById('kmPercorsi').value;
+    console.log(`Km percorsi ${kmPercorsi}`);
+})
 
 // Chiedere all'utente fascia d'età
-const userAge = Number(prompt('Inserisci l\'età'));
-console.log(userAge);
+const fasciaAge = document.getElementById("mySelect")
+fasciaAge.addEventListener('click', function() {
+    const mySelect = document.getElementById('mySelect').value;
+    console.log(`Fascia d'eta ${mySelect}`);
+})
+
+
 
 
 

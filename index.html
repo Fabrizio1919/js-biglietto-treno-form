@@ -16,18 +16,22 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form id="myForm" name="form1" >
-                    Nome e cognome: <input type="text" name="fname" value=""><br>
-                  </form>
+                <label id="myForm" name="form1" >
+                    Nome e cognome: <input id="nome" type="text" name="fname" value=""><br>
+                  </label>
             </div>
             <div class="col">
-                <form id="km" name="km" >
-                    KM da percorrere: <input type="text" name="km" value=""><br>
-                  </form>
+                <label id="km" name="km" >
+                    KM da percorrere: <input id="kmPercorsi" type="text" name="km" value=""><br>
+                  </label>
             </div>
             <div class="col">
-                <p class="px-3">Fascia d'èta</p>
-                <input type="text">
+                Fascia d'età
+                <select name="" id="mySelect">
+                    <option value="maggiorenne">Maggiorenne</option>
+                    <option value="minorenne">Minorenne</option>
+
+                </select>
             </div>
         </div>
 
