@@ -20,14 +20,14 @@ btnGenera.addEventListener('click', function () {
     const priceForKm = 0.21;
     const priceTotal = kmPercorsi * priceForKm;
     console.log(priceTotal);
-    let tipoBiglietto ='tipoBiglietto'
+    let tipoDiBiglietto = 'tipoBiglietto'
 
-    if (mySelect =='minorenne') {
+    if (mySelect == 'minorenne') {
         // Applicare sconto su minorenni del 20%
         console.log('Minorenne');
         const discount20 = (priceTotal / 100) * 20;
         finalPrice = (priceTotal - discount20);
-        let tipoBiglietto = 'ridotto'
+        let tipoDiBiglietto = 'ridotto'
         console.log(finalPrice.toFixed(2));
 
     } else if (mySelect == 'over') {
@@ -35,24 +35,26 @@ btnGenera.addEventListener('click', function () {
         console.log('over');
         const discount40 = (priceTotal / 100) * 40;
         finalPrice = (priceTotal - discount40);
-        let tipoBiglietto = "ridotto"
+        let tipoDiBiglietto = "ridotto"
         console.log(finalPrice.toFixed(2));
         // Prezzo finale
     } else if (mySelect == 'maggiorene') {
         console.log('Maggiorenne');
         finalPrice = (priceTotal.toFixed(2));
-        let tipoBiglietto = "standard"
+        let tipoDiBiglietto = "standard"
     };
 
     const sentence =
-        `Chilometri ${kmPercorsi} biglietto  ${tipoBiglietto} prezzo del biglietto ${priceTotal} €`;
+        `Chilometri ${kmPercorsi} biglietto  ${tipoDiBiglietto} prezzo del biglietto ${priceTotal} €`;
     console.log(sentence);
 
 })
 const btnAnnulla = document.getElementById("annulla")
 btnAnnulla.addEventListener('click', function () {
-    const annulla = document.getElementById('annulla').value;
-    console.log(`RESET ${annulla}`);
+    document.getElementById("nome").value = "";
+    kmPercorsi.value = "";
+    mySelect.value = "maggiorenne";
+    console.log(`RESET`);
 })
 
 
