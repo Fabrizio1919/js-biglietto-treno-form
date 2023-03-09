@@ -1,5 +1,9 @@
 #prezzo_biglietto {
     text-align: center;
     padding-bottom: 3rem;
-    
+}
+
+.bottoni {
+    padding-left: 22rem;
+    padding-top: 2rem;
 }

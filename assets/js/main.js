@@ -7,32 +7,50 @@ Età del passeggero Sulla base di queste informazioni dovrà calcolare il prezzo
 - va applicato uno sconto del 40% per gli over 65.
  */
 // Chiedere all'utente Nome e cognome
-const userNameSurname = document.getElementById("myForm")
-userNameSurname.addEventListener('click', function() {
+const btnGenera = document.getElementById("genera")
+btnGenera.addEventListener('click', function () {
     const name = document.getElementById('nome').value;
-    //console.log('NOME E COGNOME', name);
     console.log(`NOME E COGNOME ${name}`);
-})
-// Chiedere all'utente i KM da percorrere
-const userKm = document.getElementById("km")
-userKm.addEventListener('click', function() {
     const kmPercorsi = document.getElementById('kmPercorsi').value;
     console.log(`Km percorsi ${kmPercorsi}`);
-})
-
-// Chiedere all'utente fascia d'età
-const fasciaAge = document.getElementById("mySelect")
-fasciaAge.addEventListener('click', function() {
     const mySelect = document.getElementById('mySelect').value;
     console.log(`Fascia d'eta ${mySelect}`);
-})
-const btnGenera = document.getElementById("genera")
-btnGenera.addEventListener('click', function() {
     const genera = document.getElementById('genera').value;
     console.log(`Genera ${genera}`);
+    const priceForKm = 0.21;
+    const priceTotal = kmPercorsi * priceForKm;
+    console.log(priceTotal);
+    let tipoBiglietto ='tipoBiglietto'
+
+    if (mySelect =='minorenne') {
+        // Applicare sconto su minorenni del 20%
+        console.log('Minorenne');
+        const discount20 = (priceTotal / 100) * 20;
+        finalPrice = (priceTotal - discount20);
+        let tipoBiglietto = 'ridotto'
+        console.log(finalPrice.toFixed(2));
+
+    } else if (mySelect == 'over') {
+        // Applicare sconto per gli over 65 del 40%
+        console.log('over');
+        const discount40 = (priceTotal / 100) * 40;
+        finalPrice = (priceTotal - discount40);
+        let tipoBiglietto = "ridotto"
+        console.log(finalPrice.toFixed(2));
+        // Prezzo finale
+    } else if (mySelect == 'maggiorene') {
+        console.log('Maggiorenne');
+        finalPrice = (priceTotal.toFixed(2));
+        let tipoBiglietto = "standard"
+    };
+
+    const sentence =
+        `Chilometri ${kmPercorsi} biglietto  ${tipoBiglietto} prezzo del biglietto ${priceTotal} €`;
+    console.log(sentence);
+
 })
 const btnAnnulla = document.getElementById("annulla")
-btnAnnulla.addEventListener('click', function() {
+btnAnnulla.addEventListener('click', function () {
     const annulla = document.getElementById('annulla').value;
     console.log(`RESET ${annulla}`);
 })
